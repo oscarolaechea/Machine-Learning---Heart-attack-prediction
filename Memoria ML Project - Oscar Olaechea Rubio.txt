@@ -1,0 +1,14 @@
+Proyecto de Machine Learning - Datos para Predecir un Infarto al Corazon
+
+Empecé extrayendo los datos de Kaggle, un database de 43 mil filas. Utilicé Pandas y Numpys para hacer la limpieza de los datos.
+Retiré Missings, utilicé un Get Dummies para transformar los datos cualitativos en numéricos. Analicé la correlación de las variables y probé 
+extrayendo las variables que menos tenían relación con el target. El target era si la persona había tenido o no un infarto.
+Posteriormente dividí mis datos en train (80%) y test (20%). Escalé mis datos y utilicé un pipeline para empezar a probar los modelos de machine learning
+supervisados para analizar cuales eran los que mejor score daban y los mejores parámetros. Utilicé un KNN Classifier, una regresión logística,
+un decision tree classifier y finalmente un random Forest. Siendo el Random Forest el que mejor scoring obtuvo con un 0.97 de Accuracy.
+El data set estaba desbalanceado en el target, habían muchos casos de infarto negativos y muy pocos positivos, por lo que utilicé un 
+Random Oversampler para balancear los datos y así poder obtener un mejor scoring. Finalmente, me quedé con el modelo de Random Forest, ya que,
+a pesar de quitar algunos features, escalar los datos  y balancearlos no conseguía mejorar el Recall que era lo que buscaba. Finalmente, como
+conclusión creo que el modelo podría mejorarse quizas utilizando una red neuronal o teniendo mayor cantidad de datos y más balanceados. Asimismo,
+creo que se podría incrementar la cantidad de features mejor relacioonadas con el target, ya que como se puede observar en el código, 
+son pocas las variables que tienen una fuerte relación e impacto con el target.
